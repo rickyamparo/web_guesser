@@ -4,19 +4,18 @@ require 'sinatra/reloader'
 Secret_Number = rand(100)
 
 def check_color(message)
-  if message.nil?
-    "white"
+  if message.nil? ||
+     message == "Please pick a number between 0 and 100"
+    "#FFFFFF"
   else
     if message == "That was way too high!"
-      "red"
+      "#FF0000"
     elsif message == "That was way too low!"
-      "red"
-    elsif message == "That was way too low!"
-      "red"
+      "#FF0000"
     elsif message == "You were too high"
-      "red"
+      "#FF9966"
     elsif message == "You were too low"
-      "red"
+      "#FF9966"
     else
       "green"
     end
